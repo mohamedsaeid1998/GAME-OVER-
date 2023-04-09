@@ -1,0 +1,42 @@
+Api game
+
+Api Game :
+https://www.freetogame.com/api-doc
+
+
+Api Game By Rapid
+
+https://rapidapi.com/digiwalls/api/free-to-play-games-database
+
+
+
+—--------------------------------------------------------
+Apis register and Login 
+
+---------------Login API --------------
+https://sticky-note-fe.vercel.app/signin
+Method:POST
+Json Format:
+{
+	
+   "email":"ahmed@ahmed.com",
+   "password":"Ahmed@123"
+}
+
+
+
+
+---------Registration  API------------------------
+https://sticky-note-fe.vercel.app/signup
+Method:Post
+json=
+{
+	"first_name":"muti",
+	"last_name":"muti",
+        "email":"ahmed@ahmed.com",
+        "password":"Ahmed@123",
+	"age":30
+}
+
+
+
