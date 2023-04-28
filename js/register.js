@@ -8,6 +8,7 @@ const inputs = document.querySelectorAll("#register input"),
   btnRegister = document.querySelector("#btnRegister");
 let login = false;
 
+
 // ! =============> When Start ===============>
 
 icon.addEventListener("click", (e) => {
@@ -26,7 +27,8 @@ if (localStorage.getItem("theme") != null) {
 }
 // * =============> Events ===============>
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", (e)=>{
+  console.log(e);
   e.preventDefault();
   if (login === true) {
     getData();
@@ -34,14 +36,9 @@ form.addEventListener("submit", (e) => {
 });
 
 form.addEventListener("input", () => {
-  if (
-    nameValidation(0) &&
-    nameValidation(1) &&
-    emailValidation() &&
-    passValidation() &&
-    ageValidation()
-  ) {
+  if (nameValidation(0) && nameValidation(1) && emailValidation() && passValidation() && ageValidation()) {
     login = true;
+    console.log("TRUE");
   } else {
     login = false;
   }
@@ -69,6 +66,7 @@ function getData() {
     password: inputs[3].value,
     age: inputs[4].value,
   };
+  console.log(userData);
   registerForm(userData);
 }
 
@@ -86,11 +84,13 @@ async function registerForm(data) {
   if (response.message === "success") {
     message.innerHTML = `<h4 class="text-success text-center fw-bold"> Success Registration</h4>`;
     btnRegister.classList.add("disabled", "type");
+    console.log(response);
     setTimeout(() => {
       location.href = "./index.html";
     }, 1000);
   } else {
     message.innerHTML = `<h4 class="text-danger text-center fw-bold"> ${response.errors?.email.message}</h4>`;
+    console.log(response);
   }
 }
 
@@ -149,3 +149,5 @@ function ageValidation() {
     return false;
   }
 }
+
+
